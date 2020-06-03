@@ -37,6 +37,7 @@ div.pagecontent {
     background-color: #111111;
     color: white;
     width: 1000px;
+    line-height: 1.6;
 }
 
 footer {
@@ -143,9 +144,6 @@ p {
     text-indent: 15px;
 }
 
-li {
-    line-height: 1.6;
-}
 #slideshow::after {
     content: " ";
     z-index: 10;
@@ -189,7 +187,6 @@ ul#menubar>li {
     width: auto;
     color: white;
     font-size: 20px;
-    font-family: 'Kanit', Verdana, Geneva, Tahoma, sans-serif;
 }
 
 ul#menubar>li.right {
@@ -205,6 +202,7 @@ ul#menubar>li.current {
 }
 
 .member {
+    font-family: 'Kanit', Verdana, Geneva, Tahoma, sans-serif;
     text-decoration: none;
     line-height: 1;
 }
