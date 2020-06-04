@@ -381,6 +381,12 @@ img.emoji {
         transform: unset;
     }
     #header {
-        height: 100vh;
+        height: 65vh;
+    }
+    .languageflagtitle {
+        font-size: 70;
+    }
+    .languageflagbutton {
+        font-size: 70;
     }
 }
