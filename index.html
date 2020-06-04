@@ -4,7 +4,7 @@
 	<meta charset="UTF8" />
 	<title>หน้าแรก | ETS2MCG TH</title>
 	<!-- to prevent stylesheet cacheing, change the value after ?nocache -->
-	<link rel="stylesheet" href="css/stylesheet.css?nocache2ddasfrh56s47rtee">
+	<link rel="stylesheet" href="css/stylesheet.css?nocache2ddasfddddddddrh56sf47rtee">
 	<link rel="icon" href="https://common.ets2mcg.com/img/favicon.ico" type="image/x-icon">
 	<meta name="theme-color" content="#f7d331">
 	<meta property="og:site_name" content="ETS2MCG Thailand" />
@@ -141,20 +141,20 @@
 			<li><a href="rules.html" class="member">กฎของทีม</a></li>
 		</ul>
 	</div>
-
-	<div style="width: 100%; background-color: #222222;">
-		<div class="pagecontent langchooser"
-			style="display: block; visibility: hidden; background-color: #bbbbbb; padding: 10px 50px;">
-			<div style="display: block; margin: 0 auto; text-align: center;">
-				<span class="languageflagtitle" style="color: black;">ภาษา</span>
-				<div style="display: inline-block;">
-					<a class="languageflagbutton" href="https://ets2mcg.com/" title="English">🇬🇧</a>
-					<a class="languageflagbutton" href="https://kr.ets2mcg.com/" title="Korean">🇰🇷</a>
-					<a class="languageflagbutton" href="https://cn.ets2mcg.com/" title="Chinese">🇨🇳</a>
-					<a class="languageflagbutton" href="https://th.ets2mcg.com/" title="Thai">🇹🇭</a>
-				</div>
+	<div class="langchooser"
+		style="display: block; visibility: hidden; background-color: #bbbbbb; padding: 10px 50px;">
+		<div style="display: block; margin: 0 auto; text-align: center;">
+			<span class="languageflagtitle" style="color: black;">ภาษา</span>
+			<div style="display: inline-block;">
+				<a class="languageflagbutton" href="https://ets2mcg.com/" title="English">🇬🇧</a>
+				<a class="languageflagbutton" href="https://kr.ets2mcg.com/" title="Korean">🇰🇷</a>
+				<a class="languageflagbutton" href="https://cn.ets2mcg.com/" title="Chinese">🇨🇳</a>
+				<a class="languageflagbutton" href="https://th.ets2mcg.com/" title="Thai">🇹🇭</a>
 			</div>
 		</div>
+	</div>
+
+	<div style="width: 100%; background-color: #222222;">
 		<div class="pagecontent">
 			<h1>เกี่ยวกับเรา</h1>
 			<p>ETS2MCG (<i>ETS2 Multiplayer Convoys Group</i>) ก่อตั้งเมื่อปีพ.ศ.2559 พวกเราคือทีมเอเชียที่มีสมาชิกจากหลากหลายประเทศมาเข้าร่วม:
@@ -240,12 +240,23 @@
 	<script>
 		initializeScrollWorker(".pagecontent");
 
-		twemoji.parse($(".langchooser")[0]);
+		twemoji.parse($(".langchooser")[0], {
+			size: "svg",
+			ext: ".svg"
+		});
 		$(".langchooser").css("visibility", "");
 
 		$(".languageflagbutton").hover((obj) => {
 			$(".languageflagbutton").css("z-index", "5");
 			$(obj.currentTarget).css("z-index", "50");
+		})
+
+		$(".languageflagbutton").each((i, elem) => {
+			$(elem).addClass("languageflagbutton_loading");
+			$(elem).css("animation-delay", i * 150 + "ms");
+			setTimeout(() => {
+				$(elem).removeClass("languageflagbutton_loading")
+			}, i * 150 + 1000);
 		})
 	</script>
 
