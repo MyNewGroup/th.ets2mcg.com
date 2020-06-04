@@ -384,4 +384,10 @@ img.emoji {
     #header {
         height: 100vh;
     }
+    .languageflagtitle {
+        font-size: 70;
+    }
+    .languageflagbutton {
+        font-size: 70;
+    }
 }
