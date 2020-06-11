@@ -44,17 +44,13 @@
 		</div>
 	</div>
 	<!-- The slides will be loaded by script dynamically -->
-	<div id="slideshow" style="position: absolute; background-color: black; z-index: -10; display: block;"></div>
+	<div id="slideshow" style="position: absolute; background-color: black; z-index: -10; display: block; width: 100%;"></div>
 
 	<script>
 		let resized = () => {
 			let slideshow = $("#slideshow");
-			let width = $("#header").outerWidth();
-			let height = $("#header").outerHeight();
 
-			slideshow.width(width)
-			slideshow.height(height)
-
+			slideshow.height($("#header").height());
 			slideshow.css("top", $("#header").position().top)
 		};
 		window.onresize = resized;
@@ -142,10 +138,10 @@
 		</ul>
 	</div>
 	<div class="langchooser"
-		style="display: block; visibility: hidden; background-color: #bbbbbb; padding: 10px 50px;">
+		style="display: block; visibility: hidden; background-color: #bbbbbb; padding: 10px 0px;">
 		<div style="display: block; margin: 0 auto; text-align: center;">
 			<span class="languageflagtitle" style="color: black;">ภาษา</span>
-			<div style="display: inline-block;">
+			<div style="display: inline-block; font-family: sans-serif;">
 				<a class="languageflagbutton" href="https://ets2mcg.com/" title="English">🇬🇧</a>
 				<a class="languageflagbutton" href="https://kr.ets2mcg.com/" title="Korean">🇰🇷</a>
 				<a class="languageflagbutton" href="https://cn.ets2mcg.com/" title="Chinese">🇨🇳</a>
