@@ -1,4 +1,4 @@
-# ets2mcg.com
+# th.ets2mcg.org
 Repository for ETS2MCG website
 
 **banana🍌🍊**
