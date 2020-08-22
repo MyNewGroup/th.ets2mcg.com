@@ -44,6 +44,8 @@ div.pagecontent {
     color: black;
 
     box-shadow: 0 15px 30px #000000;
+
+    line-height: 1.5;
 }
 
 footer {
