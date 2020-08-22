@@ -43,10 +43,13 @@ div.pagecontent.sectionid2 {
     display: inline-block;
     transition: transform .4s;
     position: relative;
+
+    filter: drop-shadow(-3px -3px 6px white) drop-shadow(3px 3px 6px black);
 }
 
 .languageflagbutton:hover {
     transform: scale(1.5);
+    z-index: 500;
 }
 
 .languageflagbutton_loading {
@@ -110,6 +113,33 @@ div.teamtext {
     font-weight: 100;
 }
 
+.snsButton {
+    color: white;
+    width: calc(50% - 13px);
+    height: fit-content;
+    box-shadow: 5px 5px 10px #7a7a7a, -5px -5px 10px #c2c2c2;
+    border-radius: 7px;
+    border: 1px solid #9c9c9c;
+    font-size: 30px;
+    padding: 5px;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    margin: 5px 5px;
+
+    text-align: center;
+
+    transition: transform 0.3s;
+    transition-timing-function: cubic-bezier(0, 0, 0, 1);
+}
+
+.snsButton:hover {
+    z-index: 20;
+    transform: scale(1.1);
+    transition: transform 0.4s;
+    transition-timing-function: cubic-bezier(0.13, 0.99, 0.33, 1.85);
+}
+
 @media(max-width:1300px) {
     .languageflagtitle {
         font-size: 70;
@@ -137,5 +167,10 @@ div.teamtext {
     }
     div.teamtext {
         color: goldenrod;
+    }
+
+    .snsButton {
+        box-shadow: 5px 5px 10px #222, -5px -5px 10px #666666;
+        border: 1px solid #404040;
     }
 }

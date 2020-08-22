@@ -2,6 +2,10 @@
     --pagewidth: 1100px;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     overflow-x: hidden;
     color: black;
@@ -13,6 +17,7 @@ body {
 .post {
     width: 100%;
     background-color: #efefef;
+    overflow: auto;
 }
 
 div {
@@ -27,23 +32,29 @@ div.centertext {
 }
 
 div.pagecontent {
+    margin: 50px auto;
     padding: 20px 50px 20px 50px;
+    border-radius: 35px;
+
+    width: var(--pagewidth);
+    box-sizing: border-box;
     display: block;
-    margin: 0 auto;
+
     background-color: white;
     color: black;
-    width: var(--pagewidth);
-    line-height: 1.5;
+
+    box-shadow: 0 15px 30px #000000;
 }
 
 footer {
-    width: calc(100% - 40px);
+    width: 100vw;
     border: solid #aaaaaa;
     border-width: 1px 0 0 0;
     background-color: #dfdfdf;
     text-align: center;
     font-family: 'Bai Jamjuree', sans-serif;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 footer>p {
@@ -76,25 +87,6 @@ a.text:visited {
 
 a.text:hover {
     color: #c100cf;
-}
-
-a.sns {
-    text-decoration: none;
-    cursor: pointer;
-    user-select: none;
-    color: white;
-}
-
-a.sns:link {
-    color: white;
-}
-
-a.sns:visited {
-    color: white;
-}
-
-a.sns:hover {
-    color: gold;
 }
 
 a.foot {
@@ -179,7 +171,7 @@ ul#menubar {
     list-style-type: none;
     overflow: hidden;
     background-color: #fff45c;
-    width: calc(var(--pagewidth) + 100px);
+    width: var(--pagewidth);
     padding: 0px;
     display: block;
     margin: 0 auto;
@@ -192,6 +184,9 @@ ul#menubar>li {
     width: auto;
     color: black;
     font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    transition: background-color 0.3s
 }
 
 ul#menubar>li.right {
@@ -302,7 +297,17 @@ img.emoji {
         font-size: 40;
     }
     div.pagecontent {
+        margin: 50px auto;
+        padding: 20px 50px 20px 50px;
+        border-radius: 35px;
+    
         width: calc(var(--pagewidth) - 100px);
+        display: block;
+    
+        background-color: white;
+        color: black;
+    
+        box-shadow: 0 15px 30px #000000;
     }
     h1 {
         font-size: 80 !important;
