@@ -7,16 +7,16 @@
 }
 
 body {
-    overflow-x: hidden;
     color: black;
-    background-color: #dfdfdf;
+    background-color: #e8e8e8;
     font-size: 20;
     margin: 0;
+    overflow-x: hidden;
 }
 
 .post {
     width: 100%;
-    background-color: #efefef;
+    background-color: #d1d1d1;
     overflow: auto;
 }
 
@@ -32,7 +32,7 @@ div.centertext {
 }
 
 div.pagecontent {
-    margin: 50px auto;
+    margin: 30px auto 50px auto;
     padding: 20px 50px 20px 50px;
     border-radius: 35px;
 
@@ -148,16 +148,7 @@ p {
     left: 0;
     right: 0;
     background: rgba(255, 255, 255, 0.4);
-}
-
-img.imgSlide {
-    object-fit: cover;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    display: block;
+    transition: background 0.5s ease;
 }
 
 img {
@@ -180,7 +171,6 @@ ul#menubar {
 }
 
 ul#menubar>li {
-    padding: 14 16;
     box-sizing: inherit;
     float: left;
     width: auto;
@@ -188,7 +178,8 @@ ul#menubar>li {
     font-size: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
-    transition: background-color 0.3s
+    transition: background-color 0.3s;
+    position: relative;
 }
 
 ul#menubar>li.right {
@@ -205,26 +196,20 @@ ul#menubar>li.current {
 
 .member {
     font-family: 'Kanit', sans-serif;
+    display: block;
     text-decoration: none;
     line-height: 1;
-}
-
-.mcglogo {
-    width: 10em !important;
-}
-
-span.mcglogotext {
-    position: relative;
-    left: 3.5em;
+    width: 100%;
+    padding: 15px;
 }
 
 .mcglogo>a>img {
-    width: 2rem;
+    /* width: 1em; */
+    height: 0.8em;
     padding: 0;
-    margin: 0 10;
-    position: absolute;
-    top: 0.7rem;
-    transform: scale(1.5);
+    margin: 0 25 0 10;
+    transform: scale(2.4);
+    position: relative;
 }
 
 div.fullscreen {
@@ -249,34 +234,36 @@ div.fullscreen {
 }
 
 .backFadingIn {
-    opacity: 1;
-    animation-duration: 3s;
+    animation-duration: 0.8s;
     animation-name: animatedBackFadingIn;
     animation-timing-function: ease-in-out;
 }
 
 @keyframes animatedBackFadingIn {
     from {
-        opacity: 0;
+        transform: translateX(-100vw);
     }
     to {
-        opacity: 1;
+        transform: translateX(0);
     }
 }
 
 .backFadingOut {
     opacity: 0;
-    animation-duration: 3s;
+    animation-duration: 0.8s;
     animation-name: animatedBackFadingOut;
     animation-timing-function: ease-in-out;
+    z-index: -1;
 }
 
 @keyframes animatedBackFadingOut {
     from {
         opacity: 1;
+        transform: translateX(0);
     }
     to {
         opacity: 0;
+        transform: translateX(50vw);
     }
 }
 
@@ -299,17 +286,18 @@ img.emoji {
         font-size: 40;
     }
     div.pagecontent {
-        margin: 50px auto;
+        margin: 0;
         padding: 20px 50px 20px 50px;
-        border-radius: 35px;
+        border-radius: 0;
     
-        width: calc(var(--pagewidth) - 100px);
+        width: 100%;
+        box-sizing: border-box;
         display: block;
     
         background-color: white;
         color: black;
     
-        box-shadow: 0 15px 30px #000000;
+        box-shadow: none;
     }
     h1 {
         font-size: 80 !important;
@@ -324,8 +312,8 @@ img.emoji {
         text-indent: 35px;
     }
     ul#menubar {
-        width: 90%;
-        padding: 0 5%;
+        width: 100%;
+        padding: none;
     }
     ul#menubar>li {
         font-size: 50;
@@ -336,21 +324,18 @@ img.emoji {
         box-sizing: border-box;
         float: left;
     }
-    .mcglogo {
-        width: 90% !important;
-    }
-    span.mcglogotext {
-        position: unset;
-        left: unset;
-        margin: 0px 0px 0px 15px;
-    }
     .mcglogo>a>img {
         width: 1em;
-        padding: unset;
-        margin: unset;
-        position: unset;
-        top: unset;
-        transform: unset;
+        height: 1em;
+        transform: scale(1.2);
+        margin: 0 10;
+        overflow-y: hidden;
+        position: absolute;
+    }
+    span.mcglogotext {
+        position: relative;
+        left: 1.5em;
+        margin: 0px 0px 0px 15px;
     }
     #header {
         height: 65vh;
@@ -381,11 +366,12 @@ img.emoji {
         color: gray;
     }
     .post {
-        background-color: #282828;
+        background-color: #454545;
     }
     div.pagecontent {
         background-color: black;
         color: white;
+        box-shadow: 0 10px 20px #000000;
     }
     a.text {
         color: #ffae00;
@@ -400,10 +386,10 @@ img.emoji {
         color: #00cf1c;
     }
     .menubarContainer {
-        background-color: #505050;
+        background-color: #404040;
     }
     ul#menubar {
-        background-color: #505050;
+        background-color: transparent;
     }
     ul#menubar>li {
         color: white;
@@ -415,6 +401,6 @@ img.emoji {
         background-color: #ffce5c;
     }
     #slideshow::after {
-        background: rgba(0, 0, 0, 0.7);
+        background: rgba(0, 0, 0, 0.4);
     }
 }
